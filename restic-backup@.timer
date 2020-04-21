@@ -1,0 +1,9 @@
+[Unit]
+Description=Restic backup hourly
+
+[Timer]
+OnCalendar=0/2:00:00
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

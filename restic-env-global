@@ -1,0 +1,4 @@
+RESTICDATA="/srv/store1/restic"
+RESTICOPTS="--cache-dir ${RESTICDATA}/cache"
+BACKUPOPTS="--exclude-file $RESTICDATA/conf/excludes"
+BACKUPDIR="/srv"

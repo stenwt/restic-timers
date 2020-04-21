@@ -1,0 +1,7 @@
+[Unit]
+Description=Send Restic failure messages
+
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "systemctl status %i | /srv/store1/restic/bin/ts.py"

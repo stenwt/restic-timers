@@ -1,0 +1,18 @@
+[Unit]
+Description=Daily check with restic %i
+Before=restic-backup@%i.service
+After=restic-prune@%i.service restic-check-full@%i.service
+OnFailure=restic-send-failure@%n.service
+RequiresMountsFor=/srv/store1/restic /srv/store1/sten
+JobTimeoutSec=4800
+
+
+[Service]
+Type=oneshot
+EnvironmentFile=/srv/store1/restic/conf/restic-env-global
+EnvironmentFile=/srv/store1/restic/conf/restic-env-%i
+ExecStart=/usr/local/bin/restic $RESTICOPTS check
+
+
+[Install]
+WantedBy=default.target

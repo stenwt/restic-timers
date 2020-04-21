@@ -1,0 +1,4 @@
+B2_ACCOUNT_KEY=my-key
+B2_ACCOUNT_ID=my-account-id
+RESTIC_REPOSITORY="b2:restic-b2-my-bucket"
+RESTIC_PASSWORD="my-password"

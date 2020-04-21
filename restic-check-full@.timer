@@ -1,0 +1,9 @@
+[Unit]
+Description=Check Restic backup with full restore test quarterly
+
+[Timer]
+OnCalendar=quarterly
+RandomizedDelaySec=12h
+
+[Install]
+WantedBy=timers.target

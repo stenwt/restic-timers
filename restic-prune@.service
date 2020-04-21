@@ -1,0 +1,17 @@
+[Unit]
+Description=Weekly prune of restic %i
+Before=restic-backup@%i.service restic-check@%i.service
+After=restic-check-full@%i.service
+OnFailure=restic-send-failure@%n.service
+RequiresMountsFor=/srv/store1/restic /srv/store1/sten
+
+
+[Service]
+Type=oneshot
+EnvironmentFile=/srv/store1/restic/conf/restic-env-global
+EnvironmentFile=/srv/store1/restic/conf/restic-env-%i
+ExecStart=/usr/local/bin/restic $RESTICOPTS forget --keep-hourly 10 --keep-daily 7 --keep-weekly 5 --keep-monthly 12 --keep-yearly 5 --prune --cleanup-cache
+
+
+[Install]
+WantedBy=default.target
