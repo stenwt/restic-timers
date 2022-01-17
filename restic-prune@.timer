@@ -2,7 +2,7 @@
 Description=Prune Restic backup weekly
 
 [Timer]
-OnCalendar=weekly
+OnCalendar=daily
 RandomizedDelaySec=6h
  
 [Install]
