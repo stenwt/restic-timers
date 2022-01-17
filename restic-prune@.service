@@ -1,7 +1,7 @@
 [Unit]
 Description=Daily check with restic %i
 Before=restic-backup@%i.service
-After=restic-prune@%i.service restic-check-full@%i.service
+After=restic-check-full@%i.service
 OnFailure=restic-send-failure@%n.service
 RequiresMountsFor=/srv/store1/restic /srv/store1/sten
 

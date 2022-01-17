@@ -1,6 +1,6 @@
 [Unit]
 Description=Full restore test from restic to %i
-Before=restic-check@%i.service restic-prune@%i.service restic-backup@%i.service
+Before=restic-prune@%i.service restic-backup@%i.service
 OnFailure=restic-send-failure@%n.service
 RequiresMountsFor=/srv/store1/restic /srv/store1/sten
 
