@@ -3,7 +3,6 @@ Description=Backup with restic to %i
 After=restic-check@%i.service restic-prune@%i.service restic-check-full@%i.service
 OnFailure=restic-send-failure@%n.service
 RequiresMountsFor=/srv/store1/restic /srv/store1/sten
-JobTimeoutSec=1200
 
 
 [Service]
