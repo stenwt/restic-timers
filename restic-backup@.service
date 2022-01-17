@@ -11,6 +11,7 @@ Type=oneshot
 EnvironmentFile=/srv/store1/restic/conf/restic-env-global
 EnvironmentFile=/srv/store1/restic/conf/restic-env-%i
 ExecStart=/usr/local/bin/restic $RESTICOPTS backup $BACKUPOPTS $BACKUPDIR
+ExecStopPost=/usr/local/bin/restic $RESTICOPTS unlock
 
 
 [Install]
