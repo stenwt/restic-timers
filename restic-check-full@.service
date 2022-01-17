@@ -9,7 +9,7 @@ RequiresMountsFor=/srv/store1/restic /srv/store1/sten
 Type=oneshot
 EnvironmentFile=/srv/store1/restic/conf/restic-env-global
 EnvironmentFile=/srv/store1/restic/conf/restic-env-%i
-ExecStart=/usr/local/bin/restic $RESTICOPTS check --full
+ExecStart=/usr/local/bin/restic $RESTICOPTS check --read-data
 ExecStopPost=/usr/local/bin/restic $RESTICOPTS unlock
 
 
